@@ -17,7 +17,7 @@ License deed and legal code:
 
 Suggested attribution:
 
-> Rolando Bosch Rodriguez, “The Asymmetric Burden of Proof: LLMs Show a
+> Rolando Bosch, “The Asymmetric Burden of Proof: LLMs Show a
 > Null-Result Asymmetry in a Matched-Vignette Benchmark,” Hermes Labs (2026),
 > doi:10.5281/zenodo.18867694.
 

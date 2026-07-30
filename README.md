@@ -2,7 +2,7 @@
 
 Canonical repository package for:
 
-> Rolando Bosch Rodriguez, “The Asymmetric Burden of Proof: LLMs Show a
+> Rolando Bosch, “The Asymmetric Burden of Proof: LLMs Show a
 > Null-Result Asymmetry in a Matched-Vignette Benchmark,” Zenodo working paper
 > (2026). <https://doi.org/10.5281/zenodo.18867694>
 
