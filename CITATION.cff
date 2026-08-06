@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the paper below."
+title: "The Asymmetric Burden of Proof: LLMs Show a Null-Result Asymmetry in a Matched-Vignette Benchmark"
+abstract: "This paper reports a matched-vignette benchmark in which three language models evaluated positive and null scientific claims while the described evidence quality was held constant. In the published conditions, conclusion-consistent probability mass was lower for null claims in all six model-format conditions. The paper treats this as a bounded behavioral result, not as a universal model property or a demonstrated mechanism."
+type: software
+authors:
+  - family-names: "Bosch Rodriguez"
+    given-names: "Rolando"
+    orcid: "https://orcid.org/0009-0005-4896-1112"
+    affiliation: "Hermes Labs"
+license: CC-BY-4.0
+repository-code: "https://github.com/hermes-labs-ai/the-asymmetric-burden-of-proof"
+keywords:
+  - "null-result evaluation"
+  - "evidence synthesis"
+  - "asymmetric evidential standards"
+  - "LLM confidence outputs"
+  - "matched-vignette benchmarks"
+  - "publication bias"
+preferred-citation:
+  type: article
+  title: "The Asymmetric Burden of Proof: LLMs Show a Null-Result Asymmetry in a Matched-Vignette Benchmark"
+  authors:
+    - family-names: "Bosch Rodriguez"
+      given-names: "Rolando"
+      orcid: "https://orcid.org/0009-0005-4896-1112"
+      affiliation: "Hermes Labs"
+  doi: 10.5281/zenodo.18867694
+  year: 2026
+  publisher:
+    name: "Zenodo"
