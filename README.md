@@ -41,19 +41,26 @@ matched-vignette benchmarks, publication bias, and decision-support systems.
 - `LICENSE.md` — CC BY 4.0 terms for this repository package.
 - `SHA256SUMS` — integrity checksums.
 - `verify.py` — offline package-consistency verifier.
+- `replications/2026-09-02-gemini-current-model/` — public raw responses,
+  exact prompts, preregistration, analysis code, tests, and deterministic
+  verification for a bounded Gemini replication.
 
 ## Evidence and data boundary
 
-This minimum repository preserves and exposes the published paper. Supporting
-evaluation materials are retained by the author and may be requested at
-<roli@hermes-labs.ai>. Availability is considered case by case and may require
-redaction, provenance reconciliation, or redistribution-rights review. The
-materials are not represented here as a complete raw dataset or independently
-reproducible package.
+This repository preserves the published paper and now includes one independently
+inspectable replication package. Using the exact released prompts, both sampled
+Gemini models produced inconclusive aggregate results under the preregistered
+four-pair analysis; one stimulus's undefined “meaningful” threshold materially
+affected the estimate.
 
-Running `python3 verify.py` checks package integrity, citation identity, and
-the published PDF hash. It does not independently rerun model evaluations,
-reproduce API responses or confidence intervals, validate data cleaning, or
-establish generality.
+This bounded replication does not show that the original result was false, that
+the effect disappeared, that Gemini is unbiased, or that model progress caused
+the difference. Other supporting materials remain outside this repository and
+are not represented as a complete raw dataset for every published condition.
+
+Running `python3 verify.py` checks repository integrity, citation identity, and
+the published PDF hash. The replication's own `verify.py` additionally checks
+its raw records and deterministically reproduces its reported analysis. Neither
+verifier establishes generality beyond its stated boundary.
 
 rubric receipt: PENDING

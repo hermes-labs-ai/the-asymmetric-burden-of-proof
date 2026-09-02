@@ -31,7 +31,7 @@ def digest(path: Path) -> str:
 
 
 def verify_manifest() -> None:
-    expected_files = {"SHA256SUMS"}
+    expected_files = set()
     for raw_line in (ROOT / "SHA256SUMS").read_text(encoding="utf-8").splitlines():
         if not raw_line.strip():
             continue
@@ -42,9 +42,12 @@ def verify_manifest() -> None:
         require(not path.is_symlink(), f"manifest path is a symlink: {relative}")
         require(digest(path) == expected, f"checksum mismatch: {relative}")
     actual_files = {
-        path.name
-        for path in ROOT.iterdir()
-        if path.name != ".git"
+        path.relative_to(ROOT).as_posix()
+        for path in ROOT.rglob("*")
+        if path.is_file()
+        and path.name != "SHA256SUMS"
+        and ".git" not in path.parts
+        and "__pycache__" not in path.parts
     }
     require(actual_files == expected_files, "unmanifested or missing package file")
 
