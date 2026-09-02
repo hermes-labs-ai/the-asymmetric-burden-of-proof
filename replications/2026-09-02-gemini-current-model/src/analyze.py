@@ -7,6 +7,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 VALID_LABELS = {"Confirmed", "Likely", "Unsupported", "Refuted"}
+EXPECTED_PAIR_LABELS = {
+    "Compound QX-7 — Inflammation",
+    "Thornberg Reading Method",
+    "Solvent-K Respiratory Risk",
+    "Mineral Compound 44-B — Cognition",
+}
 PRICES = {
     "gemini-3.1-pro-preview": (2.0, 12.0),
     "gemini-3.1-flash-lite": (0.25, 1.50),
@@ -22,6 +28,8 @@ def parse(text: str) -> tuple[dict | None, str | None]:
         obj = json.loads(stripped)
     except json.JSONDecodeError as exc:
         return None, f"invalid JSON: {exc}"
+    if not isinstance(obj, dict):
+        return None, "response must be a JSON object"
     if obj.get("classification") not in VALID_LABELS:
         return None, "invalid classification"
     probs = obj.get("probability_distribution", {})
@@ -46,6 +54,9 @@ def percentile(values: list[float], p: float) -> float:
 
 
 def analyze_model(model: str, rows: list[dict]) -> dict:
+    observed_pairs = {row["pair_label"] for row in rows}
+    if observed_pairs != EXPECTED_PAIR_LABELS:
+        raise ValueError("analysis requires exactly the four preregistered pair labels")
     parsed = {}
     failures = []
     labels = Counter()
@@ -64,15 +75,18 @@ def analyze_model(model: str, rows: list[dict]) -> dict:
             parsed[unit] = obj
             labels[(row["condition"], obj["classification"])] += 1
     by_pair = defaultdict(list)
-    for pair in sorted({row["pair_label"] for row in rows}):
+    for pair in sorted(EXPECTED_PAIR_LABELS):
         for run in range(1, 6):
             a = parsed.get((pair, "A", run))
             b = parsed.get((pair, "B", run))
             if a and b:
                 gap = a["probability_distribution"]["effect_greater_than_zero"] - b["probability_distribution"]["effect_approximately_zero"]
                 by_pair[pair].append(gap)
-    all_gaps = [gap for gaps in by_pair.values() for gap in gaps]
-    pair_names = sorted(by_pair)
+    complete_pairs = {pair for pair, gaps in by_pair.items() if gaps}
+    if complete_pairs != EXPECTED_PAIR_LABELS:
+        raise ValueError("analysis unavailable: every preregistered pair requires a complete A/B unit")
+    all_gaps = [gap for pair in sorted(EXPECTED_PAIR_LABELS) for gap in by_pair[pair]]
+    pair_names = sorted(EXPECTED_PAIR_LABELS)
     rng = random.Random(20260902)
     boot = []
     for _ in range(10_000):

@@ -35,8 +35,9 @@ This is a bounded four-vignette, two-model replication. It cannot establish a ge
 ## Authoritative recovery evidence
 
 - Archived author runner SHA-256: `76a3bb7b205425c8c829c1244e9b3239c7086581b47f7474599b8c09d9c2a5fc`
-- GPT-4o prompt/raw run log SHA-256: `f754a6672012c79af9c44cd09f25099b29b323b70518d3ce05cbaf2d956dbe2b`
-- GPT-4o structured-JSON run log SHA-256: `0102a1519f0b4558ed16ecd22ed6b10e139ef7103a27acd02c2b82bd40702b66`
+- GPT-5.2 structured-JSON source log SHA-256: `602d395353a05756a0bcbd23de549a5975fe210b7f3d37f7c2ceb9edf45646f1`; its first eight prompt code blocks are the byte-exact source of `data/prompts.json`
+- Related historical GPT-4o free-form run log SHA-256: `f754a6672012c79af9c44cd09f25099b29b323b70518d3ce05cbaf2d956dbe2b`
+- Related historical GPT-4o structured-JSON run log SHA-256: `0102a1519f0b4558ed16ecd22ed6b10e139ef7103a27acd02c2b82bd40702b66`
 - Unified raw dataset SHA-256: `03162a5bf657d587595a6c5b539ff5824081e19c35b519ca62981f500b3fb7f3`
 - Flagship manuscript PDF SHA-256: `c3459394d0086187415d715905bec5a257aa858bf7d29fbf80c189e287faacbb`
 - Official catalog consulted: https://platform.openai.com/docs/models

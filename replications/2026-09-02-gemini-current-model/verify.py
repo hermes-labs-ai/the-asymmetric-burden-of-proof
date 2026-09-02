@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -12,6 +13,7 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from analyze import analyze_model, parse  # noqa: E402
+from validate_run import expected_keys  # noqa: E402
 
 EXPECTED_RAW_SHA256 = "11e3dc5254399780d648502828ae5ec4993abf538960cf47f210cb2ee244dfae"
 EXPECTED_PROMPT_SHA256 = "5511092039acdeccca1a44fbea70fd089e4740ee5ed5eb42110472ab4b5421f8"
@@ -36,11 +38,12 @@ def verify_checksums() -> None:
         path = ROOT / relative
         require(path.is_file() and not path.is_symlink(), f"missing or linked file: {relative}")
         require(digest(path) == expected, f"checksum mismatch: {relative}")
-    actual_files = {
-        path.relative_to(ROOT).as_posix()
-        for path in ROOT.rglob("*")
-        if path.is_file() and path.name != "SHA256SUMS" and "__pycache__" not in path.parts
-    }
+    actual_files = set()
+    for directory, subdirectories, filenames in os.walk(ROOT):
+        subdirectories[:] = [name for name in subdirectories if name not in {".git", "__pycache__"}]
+        for filename in filenames:
+            if filename != "SHA256SUMS":
+                actual_files.add((Path(directory) / filename).relative_to(ROOT).as_posix())
     require(actual_files == expected_files, "unmanifested or missing replication file")
 
 
@@ -59,7 +62,7 @@ def main() -> None:
     rows = [json.loads(line) for line in raw_path.read_text(encoding="utf-8").splitlines()]
     require(len(rows) == 80, "expected 80 raw rows")
     keys = {(row["requested_model"], row["pair_label"], row["condition"], row["run_number"]) for row in rows}
-    require(len(keys) == 80, "duplicate model/pair/condition/run key")
+    require(keys == expected_keys(prompts), "raw key matrix differs from the preregistered Cartesian product")
     require(len({row["response_id"] for row in rows}) == 80, "duplicate provider response ID")
     require(all(row["status"] == "ok" for row in rows), "non-successful API row")
     require(all(row["prompt"] == expected_prompts[(row["pair_label"], row["condition"])] for row in rows), "submitted prompt mismatch")
