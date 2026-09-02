@@ -31,3 +31,19 @@ in this pass,” not “the source never existed.”
 The published PDF remains authoritative. Any later source recovery must be
 added as a separately named artifact with its own checksum and a documented
 comparison; it must not replace the PDF.
+
+## September 2026 replication package
+
+`replications/2026-09-02-gemini-current-model/` is a separately named,
+post-publication replication record. It does not modify or supersede the
+canonical PDF. The package preserves the exact released structured-JSON
+prompts, the preregistered analysis and pre-inference provider amendment, 80
+complete raw Gemini API response objects, recorded environment metadata,
+deterministic analysis output, tests, and checksums.
+
+The raw-response SHA-256 is
+`11e3dc5254399780d648502828ae5ec4993abf538960cf47f210cb2ee244dfae`;
+the prompt-corpus SHA-256 is
+`5511092039acdeccca1a44fbea70fd089e4740ee5ed5eb42110472ab4b5421f8`.
+The package intentionally excludes credentials, quota-error records, and
+private handoffs.

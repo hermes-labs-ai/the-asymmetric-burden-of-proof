@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -31,7 +32,7 @@ def digest(path: Path) -> str:
 
 
 def verify_manifest() -> None:
-    expected_files = {"SHA256SUMS"}
+    expected_files = set()
     for raw_line in (ROOT / "SHA256SUMS").read_text(encoding="utf-8").splitlines():
         if not raw_line.strip():
             continue
@@ -41,11 +42,12 @@ def verify_manifest() -> None:
         require(path.is_file(), f"missing manifest file: {relative}")
         require(not path.is_symlink(), f"manifest path is a symlink: {relative}")
         require(digest(path) == expected, f"checksum mismatch: {relative}")
-    actual_files = {
-        path.name
-        for path in ROOT.iterdir()
-        if path.name != ".git"
-    }
+    actual_files = set()
+    for directory, subdirectories, filenames in os.walk(ROOT):
+        subdirectories[:] = [name for name in subdirectories if name not in {".git", "__pycache__"}]
+        for filename in filenames:
+            if filename != "SHA256SUMS":
+                actual_files.add((Path(directory) / filename).relative_to(ROOT).as_posix())
     require(actual_files == expected_files, "unmanifested or missing package file")
 
 

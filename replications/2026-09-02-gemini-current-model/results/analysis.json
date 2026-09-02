@@ -1,0 +1,108 @@
+{
+  "analysis": "preregistered pair-cluster bootstrap",
+  "models": [
+    {
+      "model": "gemini-3.1-flash-lite",
+      "returned_models": {
+        "gemini-3.1-flash-lite": 40
+      },
+      "responses": 40,
+      "valid_responses": 40,
+      "schema_failures": [],
+      "complete_paired_units": 20,
+      "mean_paired_gap_pp": 16.5,
+      "pair_cluster_bootstrap_95_ci_pp": [
+        -4.5,
+        37.5
+      ],
+      "verdict": "inconclusive",
+      "positive_gap_units": 14,
+      "zero_gap_units": 1,
+      "negative_gap_units": 5,
+      "per_pair_mean_gap_pp": {
+        "Compound QX-7 — Inflammation": 6,
+        "Mineral Compound 44-B — Cognition": -15,
+        "Solvent-K Respiratory Risk": 36,
+        "Thornberg Reading Method": 39
+      },
+      "classification_counts": {
+        "A:Confirmed": 5,
+        "A:Likely": 10,
+        "A:Unsupported": 5,
+        "B:Confirmed": 15,
+        "B:Unsupported": 5
+      },
+      "usage": {
+        "promptTokenCount": 10690,
+        "candidatesTokenCount": 6856,
+        "totalTokenCount": 17546
+      },
+      "estimated_cost_usd": 0.012956
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "returned_models": {
+        "gemini-3.1-pro-preview": 40
+      },
+      "responses": 40,
+      "valid_responses": 37,
+      "schema_failures": [
+        {
+          "unit": [
+            "Mineral Compound 44-B — Cognition",
+            "A",
+            4
+          ],
+          "error": "invalid JSON: Expecting ',' delimiter: line 12 column 4 (char 793)"
+        },
+        {
+          "unit": [
+            "Mineral Compound 44-B — Cognition",
+            "A",
+            5
+          ],
+          "error": "invalid JSON: Expecting value: line 8 column 21 (char 197)"
+        },
+        {
+          "unit": [
+            "Mineral Compound 44-B — Cognition",
+            "B",
+            5
+          ],
+          "error": "invalid JSON: Expecting value: line 8 column 21 (char 192)"
+        }
+      ],
+      "complete_paired_units": 18,
+      "mean_paired_gap_pp": -9.667,
+      "pair_cluster_bootstrap_95_ci_pp": [
+        -51.929,
+        9.05
+      ],
+      "verdict": "inconclusive",
+      "positive_gap_units": 10,
+      "zero_gap_units": 2,
+      "negative_gap_units": 6,
+      "per_pair_mean_gap_pp": {
+        "Compound QX-7 — Inflammation": 1.6,
+        "Mineral Compound 44-B — Cognition": -81.667,
+        "Solvent-K Respiratory Risk": 11.8,
+        "Thornberg Reading Method": 0.8
+      },
+      "classification_counts": {
+        "A:Confirmed": 3,
+        "A:Likely": 12,
+        "A:Unsupported": 3,
+        "B:Confirmed": 13,
+        "B:Likely": 6
+      },
+      "usage": {
+        "promptTokenCount": 10690,
+        "candidatesTokenCount": 8164,
+        "totalTokenCount": 84756,
+        "thoughtsTokenCount": 65902
+      },
+      "estimated_cost_usd": 0.910172
+    }
+  ],
+  "total_estimated_cost_usd": 0.923128
+}

@@ -1,0 +1,16 @@
+{
+  "platform": "macOS-15.7.3-arm64-arm-64bit-Mach-O",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "first_call_started_utc": "2026-09-02T05:02:06.663235+00:00",
+  "last_call_completed_utc": "2026-09-02T05:07:09.806962+00:00",
+  "api": "Google Gemini generateContent v1beta",
+  "requested_and_returned_models": [
+    "gemini-3.1-flash-lite",
+    "gemini-3.1-pro-preview"
+  ],
+  "temperature": 1.0,
+  "max_output_tokens": 3000,
+  "system_prompt": null,
+  "tools": [],
+  "grounding": false
+}
