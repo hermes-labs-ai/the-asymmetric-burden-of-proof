@@ -45,6 +45,31 @@ matched-vignette benchmarks, publication bias, and decision-support systems.
   exact prompts, preregistration, analysis code, tests, and deterministic
   verification for a bounded Gemini replication.
 
+## Reviewer reproduction path
+
+No API key or inference call is required to audit the archived replication.
+The following pins the exact public package reviewed in PR #2, verifies the
+repository archive, then runs the replication's seven tests and deterministic
+raw-record verifier from the directory its imports expect:
+
+```bash
+git clone https://github.com/hermes-labs-ai/the-asymmetric-burden-of-proof.git
+cd the-asymmetric-burden-of-proof
+git checkout 24acb0b158a360f05d3a56b199c2c5b1316e40a1
+python3 verify.py
+cd replications/2026-09-02-gemini-current-model
+python3 -m unittest discover -s tests -v
+python3 verify.py
+```
+
+Expected terminal signals are `PASS` from both verifiers and `OK` after seven
+tests. The replication verifier checks 80 unique raw calls, the exact released
+prompts, 77/3 schema accounting, deterministic analysis, and checksums. These
+checks reproduce the archived analysis; they do not rerun inference or establish
+model-family generality, causal model progress, or that the original result was
+false. Cite the working paper using [`CITATION.bib`](CITATION.bib), and identify
+this replication by its pinned commit and package path.
+
 ## Evidence and data boundary
 
 This repository preserves the published paper and now includes one independently
