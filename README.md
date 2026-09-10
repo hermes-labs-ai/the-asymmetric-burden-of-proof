@@ -25,6 +25,8 @@ matched-vignette benchmarks, publication bias, and decision-support systems.
   <https://doi.org/10.5281/zenodo.18867694>
 - Hermes Labs publication index:
   <https://github.com/hermes-labs-ai/hermes-publications/tree/main/papers/asymmetric-burden-of-proof>
+- Accessible HTML edition:
+  <https://hermes-labs.ai/research/the-asymmetric-burden-of-proof>
 - Hermes Labs hosted PDF:
   <https://hermes-labs.ai/papers/asymmetric-burden-of-proof.pdf>
 - Related taxonomy:
