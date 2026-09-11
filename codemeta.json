@@ -1,0 +1,35 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "The Asymmetric Burden of Proof: LLMs Show a Null-Result Asymmetry in a Matched-Vignette Benchmark",
+  "description": "This paper reports a matched-vignette benchmark in which three language models evaluated positive and null scientific claims while the described evidence quality was held constant. In the published conditions, conclusion-consistent probability mass was lower for null claims in all six model-format conditions. The paper treats this as a bounded behavioral result, not as a universal model property or a demonstrated mechanism.",
+  "identifier": "https://doi.org/10.5281/zenodo.18867693",
+  "codeRepository": "https://github.com/hermes-labs-ai/the-asymmetric-burden-of-proof",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "datePublished": "2026-03-04",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Rolando",
+      "familyName": "Bosch",
+      "@id": "https://orcid.org/0009-0005-4896-1112",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Hermes Labs"
+      }
+    }
+  ],
+  "keywords": [
+    "null-result evaluation",
+    "evidence synthesis",
+    "asymmetric evidential standards",
+    "LLM confidence outputs",
+    "matched-vignette benchmarks",
+    "publication bias"
+  ],
+  "relatedLink": [
+    "https://hermes-labs.ai/research/the-asymmetric-burden-of-proof",
+    "https://hermes-labs.ai/papers/asymmetric-burden-of-proof.pdf",
+    "https://github.com/hermes-labs-ai/hermes-publications/tree/main/papers/asymmetric-burden-of-proof"
+  ]
+}

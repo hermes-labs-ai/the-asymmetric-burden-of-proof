@@ -1,5 +1,7 @@
 # The Asymmetric Burden of Proof
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18867693.svg)](https://doi.org/10.5281/zenodo.18867693)
+
 Canonical repository package for:
 
 > Rolando Bosch, “The Asymmetric Burden of Proof: LLMs Show a
@@ -43,6 +45,10 @@ matched-vignette benchmarks, publication bias, and decision-support systems.
 - `LICENSE.md` — CC BY 4.0 terms for this repository package.
 - `SHA256SUMS` — integrity checksums.
 - `verify.py` — offline package-consistency verifier.
+- `CITATION.cff` — machine-readable citation metadata.
+- `codemeta.json` — CodeMeta 2.0 software/archive metadata.
+- `.zenodo.json` — Zenodo deposit metadata mirroring the canonical record.
+- `llms.txt` — machine-readable summary for retrieval agents.
 - `replications/2026-09-02-gemini-current-model/` — public raw responses,
   exact prompts, preregistration, analysis code, tests, and deterministic
   verification for a bounded Gemini replication.
