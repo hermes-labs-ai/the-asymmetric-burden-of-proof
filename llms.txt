@@ -1,0 +1,38 @@
+# The Asymmetric Burden of Proof
+
+Archival repository for a Hermes Labs Zenodo working paper. Read the paper
+at https://hermes-labs.ai/research/the-asymmetric-burden-of-proof or cite the DOI directly.
+
+## What this is
+
+This paper reports a matched-vignette benchmark in which three language models evaluated positive and null scientific claims while the described evidence quality was held constant. In the published conditions, conclusion-consistent probability mass was lower for null claims in all six model-format conditions. The paper treats this as a bounded behavioral result, not as a universal model property or a demonstrated mechanism.
+
+## Canonical identity
+
+- Title: The Asymmetric Burden of Proof: LLMs Show a Null-Result Asymmetry in a Matched-Vignette Benchmark
+- Author: Rolando Bosch, Hermes Labs (ORCID 0009-0005-4896-1112)
+- DOI (concept, version-independent): 10.5281/zenodo.18867693
+- DOI (current version): 10.5281/zenodo.18867694
+- Publication date: 2026-03-04
+- License: CC BY 4.0
+- Canonical HTML edition: https://hermes-labs.ai/research/the-asymmetric-burden-of-proof
+- Hosted PDF: https://hermes-labs.ai/papers/asymmetric-burden-of-proof.pdf
+- Publication index entry: https://github.com/hermes-labs-ai/hermes-publications/tree/main/papers/asymmetric-burden-of-proof
+- Repository: https://github.com/hermes-labs-ai/the-asymmetric-burden-of-proof
+
+## Evidence boundary
+
+The published PDF is authoritative. One bounded Gemini replication package is archived under replications/; it does not show that the original result was false, that the effect disappeared, or that model progress caused any difference. Other supporting materials remain outside this repository and are not represented as a complete raw dataset for every published condition.
+
+Not peer reviewed. Deposited on Zenodo, which assigns a DOI without refereeing.
+
+## Not affiliated
+
+Hermes Labs is not affiliated with NousResearch, Teknium, the Nous-Hermes LLM
+line, or the unrelated `hermes-agent` project.
+
+## Citation
+
+See CITATION.cff and CITATION.bib in this repository, or:
+
+Bosch, R. (2026). The Asymmetric Burden of Proof: LLMs Show a Null-Result Asymmetry in a Matched-Vignette Benchmark. Zenodo. https://doi.org/10.5281/zenodo.18867693
