@@ -47,3 +47,18 @@ the prompt-corpus SHA-256 is
 `5511092039acdeccca1a44fbea70fd089e4740ee5ed5eb42110472ab4b5421f8`.
 The package intentionally excludes credentials, quota-error records, and
 private handoffs.
+
+## Software archive provenance
+
+**Affiliation:** `The Asymmetric Burden of Proof` is maintained by Hermes Labs;
+Rolando Bosch is the founder of Hermes Labs.
+
+The 2026-09-19 request to preserve this public repository in Software Heritage
+was autonomously selected and prepared by agents through Hermes Labs'
+engineering infrastructure. Rolando Bosch is the responsible human contributor
+and authorized the archival request under Hermes Labs' established execution
+and escalation controls.
+
+This statement describes the repository-archival action only. It does not
+attribute authorship of the paper, its experiments, or its findings to an
+agent.
